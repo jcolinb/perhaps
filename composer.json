@@ -1,0 +1,25 @@
+{
+  "name": "gateless/perhaps",
+  "description": "A Maybe-like class for object-oriented workflows",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jesse Baker",
+      "email": "gateless@protonmail.com"
+    }
+  ],
+  "require-dev": {
+    "pestphp/pest": "^2.36"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Gateless\\Perhaps\\": "src/"
+    }
+  }
+}
