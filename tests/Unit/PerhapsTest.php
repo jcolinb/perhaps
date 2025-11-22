@@ -17,6 +17,13 @@ test('It will return Nothing if it lifts null', function () {
     expect(Perhaps::return(null))->toBeInstanceOf(Nothing::class);
 });
 
+test('It will return Nothing if it lifts Nothing', function () {
+    expect(Perhaps::return(Nothing::message('Nada')))
+        ->toBeInstanceOf(Nothing::class)
+        ->reason()
+        ->toBe('Nada');
+});
+
 test('It can map over a non-null value', function (mixed $value,Closure $fn,mixed $expected) {
     expect(Perhaps::return($value)->map($fn)->flat())->toBe($expected);
 })
