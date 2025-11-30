@@ -61,4 +61,10 @@ test('toString method outputs a formatted type string', function () {
         ->toBe("Nothing<message>");
     expect(Perhaps::return([1,2,3])->__toString())
         ->toBe("Perhaps<array>");
+    expect(Perhaps::return((object)['name'=>'John'])->__toString())
+        ->toBe("Perhaps<object>");
+    expect(Perhaps::return(1)->__toString())
+        ->toBe("Perhaps<integer>");
+    expect(Perhaps::return('string')->__toString())
+        ->toBe("Perhaps<string>");
 });
